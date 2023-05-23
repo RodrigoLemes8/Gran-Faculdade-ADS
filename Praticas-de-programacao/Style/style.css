@@ -1,0 +1,56 @@
+h1,
+h2 {
+    color: #070707;
+    text-align: center;
+}
+
+h1 {
+    text-transform: uppercase;
+
+}
+
+p {
+    text-align: justify;
+    color:white;
+}
+
+body {
+    margin: 0;
+    color: black;
+    background-color: #978383;
+}
+
+header {
+    background-color: #bd9696;
+}
+
+main {
+    margin: auto 20%;
+    background-color: #f38080;
+}
+
+
+.destaque {
+    background-color: #3f3c3c;
+    color: azure;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+#img-logo {
+    width: 50px;
+
+}
+
+nav li{
+    display: inline;
+    margin-left: 20px;
+    color: #ffffff;
+    border: 2px solid #f38080;
+    padding: 5px;
+
+}
+
+nav {
+    float: right;
+}
