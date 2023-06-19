@@ -1,37 +1,38 @@
-function somar () {
+function calcular(orepacao){
   const n1 = document.getElementById("n1").value
   const n2 = document.getElementById("n2").value
+  let resultado
 
-  const soma = parseFloat(n1) + parseFloat(n2)
-  document.getElementById("resultadoSoma").innerHTML = "O resultado é: " + soma
+  switch(orepacao){
+    case '+': resultado = somar(n1, n2); break
+    case '-': resultado = subtrair(n1, n2); break
+    case '*': resultado = multiplicar(n1, n2); break
+    case '/': resultado = dividir(n1,n2); break
 
+  }
+  document.getElementById("resultado").innerHTML = "O resultado é: " + resultado
 }
 
 
-function subtrair () {
-  const n1 = document.getElementById("n1").value
-  const n2 = document.getElementById("n2").value
-
-  const subtração = parseFloat(n1) - parseFloat(n2)
-  document.getElementById("resultadoSoma").innerHTML = "O resultado é: " + subtração
-
+function somar (n1,n2) {
+  return Number(n1) + Number(n2)
 }
 
-function multiplicar () {
-  const n1 = document.getElementById("n1").value
-  const n2 = document.getElementById("n2").value
 
-
-  const muiltiplicação = parseFloat(n1) * parseFloat(n2)
-  document.getElementById("resultadoSoma").innerHTML = "O resultado é: " + muiltiplicação
-
+function subtrair (n1, n2) {
+  return Number(n1) - Number(n2)
 }
 
-function dividir () {
-  const n1 = document.getElementById("n1").value
-  const n2 = document.getElementById("n2").value
+function multiplicar (n1, n2) {
+  return Number(n1) * Number(n2)
+}
 
-  const divição = parseFloat(n1) / parseFloat(n2)
-  document.getElementById("resultadoSoma").innerHTML = "O resultado é: " + divição
+function dividir (n1, n2) {
+  if (n2 == 0) {
+    console.error("Não é poessivel dividir numero por 0")
+    return null
 
+  }else {
+    return Number(n1) / Number(n2)
+  }
 }

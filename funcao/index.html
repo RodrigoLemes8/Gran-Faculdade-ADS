@@ -14,16 +14,18 @@
       N2: <input type="number" id="n2" />
       <br />
       <br />
-      <button type="button" value="Somar" onclick="somar()">Somar</button>
-      <button type="button" value="Subtrair" onclick="subtrair()">
+      <button type="button" value="Somar" onclick="calcular('+')">Somar</button>
+      <button type="button" value="Subtrair" onclick="calcular('-')">
         Subtrair
       </button>
-      <button type="button" value="Multiplicação" onclick="multiplicar()">
+      <button type="button" value="Multiplicação" onclick="calcular('*')">
         multiplicar
       </button>
-      <button type="button" value="Divisão" onclick="dividir()">Dividir</button>
+      <button type="button" value="Divisão" onclick="calcular('/')">
+        Dividir
+      </button>
 
-      <h3 id="resultadoSoma">O resultado é:</h3>
+      <h3 id="resultado">O resultado é:</h3>
     </form>
     <hr />
     <script src="/index.js"></script>
