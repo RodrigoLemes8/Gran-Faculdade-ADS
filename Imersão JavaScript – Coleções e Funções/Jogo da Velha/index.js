@@ -29,7 +29,15 @@ function exibir() {
     tabela += "<tr>"
 
     for(let j = 0; j <3; j++){
-      tabela += "<td>-</td>"
+
+      switch (tabuleiro[i][j]) {
+        case -1: marcador = "X"; break;
+        case 1: marcador = "O"; break;
+        default: marcador = "_"
+      }
+
+
+      tabela += "<td>" + marcador + "</td>"
     }
     tabela += "</tr>"
   }
@@ -38,14 +46,28 @@ function exibir() {
   borad.innerHTML = tabela
 }
 function jogar() {
-  aviso.innerHTML = "Vez do jogador: " + (jogador%2 + 1)
+  aviso.innerHTML = "Vez do jogador: " + numeroJogador()
 
   linha = document.getElementById("linha").value -1
   coluna = document.getElementById("coluna").value -1
-  tabuleiro[linha][coluna] = 1
+
+  if (tabuleiro[linha][coluna] == 0 ) {
+    tabuleiro[linha][coluna] = numeroJogador() == 1 ? 1 : -1
+  } else {
+    aviso.innerHTML = "Esse campo ja foi marcado"
+  }
+
+
 
   jogador++
+  exibir()
+  checar()
 }
 function checar() {
+
+}
+
+function numeroJogador() {
+  return jogador%2 + 1
 
 }
