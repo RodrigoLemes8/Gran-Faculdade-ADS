@@ -66,30 +66,36 @@ function jogar() {
 function checar() {
 
   //linhas
-  for (let i = 0; i < 3; i++) {
-    let soma = 0;
-    soma = tabuleiro[i][0] + tabuleiro[i][1] + tabuleiro[i][2]
+  for(let i=0 ; i<3 ; i++){
+    let soma=0;
+    soma=tabuleiro[i][0]+tabuleiro[i][1]+tabuleiro[i][2];
 
-    if(soma == 3 || soma == -3 )
-    aviso.innerHTML = "O jogador "+ numeroJogador()+ "ganhou! "
-  }
+    if(soma==3 || soma==-3)
+     aviso.innerHTML="Jogador " + ((jogador)%2 + 1) + " ganhou! Linha " + (i+1) + " preenchida!";
+   }
+
 
   //Colunas
-  for (let i = 0; i < 3; i++) {
-    let soma = 0;
-    soma = tabuleiro[0][i] + tabuleiro[1][0] + tabuleiro[2][i]
+  for(let i=0 ; i<3 ; i++){
+    let soma=0;
+    soma=tabuleiro[0][i]+tabuleiro[1][i]+tabuleiro[2][i];
 
-    if(soma == 3 || soma == -3 )
-    aviso.innerHTML = "O jogador "+ numeroJogador()+ "ganhou! "
-  }
+    if(soma==3 || soma==-3)
+     aviso.innerHTML="Jogador " + ((jogador)%2 + 1) + " ganhou! Coluna " + (i+1) + " preenchida!";
+   }
 
-  //diagonal
-    soma = tabuleiro[0][0] + tabuleiro[1][1] + tabuleiro[2][2]
 
-    if(soma == 3 || soma == -3 ){
-    aviso.innerHTML = "O jogador "+ numeroJogador()+ "ganhou! "
-  }
+    //Diagonal
+     soma=0;
+    soma = tabuleiro[0][0]+tabuleiro[1][1]+tabuleiro[2][2];
+    if(soma==3 || soma==-3)
+      aviso.innerHTML="Jogador " + ((jogador)%2 + 1) + " ganhou! Diagonal preenchida!";
 
+    //Diagonal
+     soma=0;
+    soma = tabuleiro[0][2]+tabuleiro[1][1]+tabuleiro[2][0];
+    if(soma==3 || soma==-3)
+      aviso.innerHTML="Jogador " + ((jogador)%2 + 1) + " ganhou! Diagonal preenchida!";
 }
 
 function numeroJogador() {
