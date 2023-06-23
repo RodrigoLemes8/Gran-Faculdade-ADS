@@ -38,7 +38,13 @@ function exibir() {
   borad.innerHTML = tabela
 }
 function jogar() {
+  aviso.innerHTML = "Vez do jogador: " + (jogador%2 + 1)
 
+  linha = document.getElementById("linha").value -1
+  coluna = document.getElementById("coluna").value -1
+  tabuleiro[linha][coluna] = 1
+
+  jogador++
 }
 function checar() {
 
